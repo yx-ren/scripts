@@ -6,6 +6,19 @@ strace
 systool
 lsof
 ss
+bash-c*
+tmux
+cargo
+rust
+glibc-common
+epel-release
+the_silver_searcher
+openssl
+openssl-devel
+libevent
+libevent-devel
+ncurses
+ncurses-devel
 )
 
 for repo in ${repo_list[@]}
