@@ -2,6 +2,8 @@
 repos="\
     vim
     tcpdump
+    nc
+    telent
     strace
     systool
     lsof
