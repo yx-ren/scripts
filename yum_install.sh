@@ -6,6 +6,7 @@ repos="\
     telent
     strace
     systool
+    ncdu
     lsof
     ss
     bash-c*
