@@ -31,6 +31,6 @@ repos="\
 "
 
 echo $repos
-sudo yum install $repos
+sudo yum install -y $repos
 
 exit 0
