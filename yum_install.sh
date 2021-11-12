@@ -1,5 +1,6 @@
 #/bin/bash
 repos="\
+    jq
     vim
     tcpdump
     nc
