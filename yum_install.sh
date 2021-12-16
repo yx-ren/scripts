@@ -29,6 +29,8 @@ repos="\
     perl perl-devel perl-ExtUtils-ParseXS
     perl-ExtUtils-XSpp perl-ExtUtils-CBuilder
     perl-ExtUtils-Embed libX* ncurses-devel gtk2-devel
+    readline-devel
+    rlwrap
 "
 
 echo $repos
