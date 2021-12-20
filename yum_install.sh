@@ -31,6 +31,10 @@ repos="\
     perl-ExtUtils-Embed libX* ncurses-devel gtk2-devel
     readline-devel
     rlwrap
+    flex
+    flex-devel
+    bison
+    byacc byaccj
 "
 
 echo $repos
