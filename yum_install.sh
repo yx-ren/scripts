@@ -35,6 +35,7 @@ repos="\
     flex-devel
     bison
     byacc byaccj
+    man
 "
 
 echo $repos
