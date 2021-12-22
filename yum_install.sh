@@ -1,5 +1,6 @@
 #/bin/bash
 repos="\
+    gdb
     jq
     vim
     tcpdump
@@ -36,6 +37,7 @@ repos="\
     bison
     byacc byaccj
     man
+    valgrind
 "
 
 echo $repos
