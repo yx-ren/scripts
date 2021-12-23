@@ -7,7 +7,7 @@ repos="\
     nc
     telent
     strace
-    systool
+    systool sysstat
     ncdu
     lsof
     ss
