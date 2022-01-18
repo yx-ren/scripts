@@ -3,7 +3,7 @@ repos="\
     gdb
     jq
     vim
-    tcpdump
+    tcpdump traceroute
     nc
     telent
     strace
@@ -36,8 +36,9 @@ repos="\
     flex-devel
     bison
     byacc byaccj
-    man
+    man tldr
     valgrind
+    perf
 "
 
 echo $repos
