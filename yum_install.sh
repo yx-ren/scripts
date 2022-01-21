@@ -39,6 +39,7 @@ repos="\
     man tldr
     valgrind
     perf
+    unzip
 "
 
 echo $repos
