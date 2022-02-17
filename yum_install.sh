@@ -3,7 +3,7 @@ repos="\
     gdb
     jq
     vim
-    tcpdump traceroute
+    tcpdump traceroute nethogs
     nc
     telent
     strace
