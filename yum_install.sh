@@ -40,6 +40,7 @@ repos="\
     valgrind
     perf
     unzip
+    supervisor
 "
 
 echo $repos
