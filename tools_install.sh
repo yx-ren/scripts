@@ -1,5 +1,5 @@
 #/bin/bash
-source "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/common.sh"
+#source "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/common.sh"
 
 jobs_num=8
 tmp_dir=tmp
@@ -9,6 +9,7 @@ function install_universal_ctags
     universal_ctags_version=`ctags --version | grep -i 'Universal Ctags' | head -n1`
     if [ ! "z${universal_ctags_version}" = "z" ]; then
         echo "Universal Ctags has been installed, version:${universal_ctags_version}"
+        return 0
     fi
 
     echo "start to install universal ctags"
@@ -19,6 +20,11 @@ function install_universal_ctags
     make -j${jobs_num}
     make install # may require extra privileges depending on where to install
     cd -
+    mv /usr/bin/ctags /usr/bin/ctags.bak
+    ln -s /usr/local/bin/ctags  /usr/bin/ctags
+
+    universal_ctags_version=`ctags --version | grep -i 'Universal Ctags' | head -n1`
+    echo "install ctags:${universal_ctags_version}"
 
     return 0
 }
@@ -46,10 +52,14 @@ function main
     fi
 
     install_fzf
-    BCS_CHK_RC0 "failed to install fzf"
+    if [ $? != 0 ]; then
+        echo "failed to install fzf"
+    fi
 
     install_universal_ctags
-    BCS_CHK_RC0 "failed to install ctags"
+    if [ $? != 0 ]; then
+        echo "failed to install universal ctags"
+    fi
 }
 
 main $?
