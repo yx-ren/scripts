@@ -2,6 +2,7 @@
 
 # User specific aliases and functions
 
+alias vi='vim'
 alias tmux='tmux -2 -u'
 alias ag='ag --noaffinity'
 
