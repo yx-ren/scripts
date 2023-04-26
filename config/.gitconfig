@@ -1,0 +1,7 @@
+[http]
+	sslVerify = false
+[user]
+	name = meixue
+	email = renyunxiang.ryx@antgroup.com
+[color]
+	ui = true
