@@ -86,7 +86,7 @@ function install_vim_8
 	make -j8
 	make install
 
-	cp /usr/bin/vim /usr/bin/vim.bak
+	mv /usr/bin/vim /usr/bin/vim.bak
 	sudo ln -s /usr/local/vim/bin/vim /usr/bin/vim
 }
 
