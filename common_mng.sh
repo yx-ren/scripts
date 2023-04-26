@@ -1,6 +1,5 @@
 #!/bin/bash
 
-#source "${SH}/mycommon.sh"
 source "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/common.sh"
 
 #### support environment variables
