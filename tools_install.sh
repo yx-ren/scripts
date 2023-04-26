@@ -43,6 +43,16 @@ function install_fzf
     ~/.fzf/install
 }
 
+function install_tmux
+{
+    git clone git@github.com:tmux/tmux.git
+    cd tmux
+    sh autogen.sh
+    ./configure && make -j8
+    mv /usr/bin/tmux /usr/bin/tmux.bak
+    cp tmux /usr/bin/tmux
+}
+
 function main
 {
     set -e
@@ -51,14 +61,19 @@ function main
         rm -rf ${tmp_dir}
     fi
 
-    install_fzf
-    if [ $? != 0 ]; then
-        echo "failed to install fzf"
-    fi
-
     install_universal_ctags
     if [ $? != 0 ]; then
         echo "failed to install universal ctags"
+    fi
+
+    install_tmux
+    if [ $? != 0 ]; then
+        echo "failed to install tmux"
+    fi
+
+    install_fzf
+    if [ $? != 0 ]; then
+        echo "failed to install fzf"
     fi
 }
 
