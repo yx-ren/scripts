@@ -8,7 +8,14 @@ github_repositories="\
     https://github.com/yx-ren/LinuxDetours
     https://github.com/yx-ren/algorithms
     "
+cd ../
+
 for repo in $github_repositories
 do
     git clone --recurse-submodules $repo
+    if [ $? != 0 ]; then
+        echo "failed to clone repo:${repo}"
+    fi
 done
+
+cd -
