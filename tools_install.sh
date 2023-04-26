@@ -97,6 +97,12 @@ function main
     if [[ -d ${tmp_dir} && ! -z ${tmp_dir} ]]; then
         rm -rf ${tmp_dir}
     fi
+    mkdir ${tmp_dir}
+
+    install_vim_8
+    if [ $? != 0 ]; then
+        echo "failed to install universal ctags"
+    fi
 
     install_universal_ctags
     if [ $? != 0 ]; then
