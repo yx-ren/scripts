@@ -1,0 +1,14 @@
+[http]
+	sslVerify = false
+[user]
+	email = renyunxiang.ryx@antgroup.com
+	name = meixue
+[pager]
+	branch = false
+	tag = false
+[color "branch"]
+    current = magenta
+    local = green
+    remote = yellow
+    upstream = magenta
+
