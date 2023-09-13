@@ -35,7 +35,7 @@ LS_COLORS=$LS_COLORS:'tw=34;4'
 LS_COLORS=$LS_COLORS:'ow=34;4'
 
                                       # 行末的注释是错的，别看
-LS_COLORS=$LS_COLORS:'ln=34;4'        # Symbolic link     = Bold, Cyan
+LS_COLORS=$LS_COLORS:'ln=37;4'        # Symbolic link     = Bold, Cyan
 LS_COLORS=$LS_COLORS:'or=01;05;31'    # broken  link      = Bold, Red, Flashing
 LS_COLORS=$LS_COLORS:'pi=34;4'        # Named pipe        = Yellow
 LS_COLORS=$LS_COLORS:'so=34;4'        # Socket            = Bold, Magenta
