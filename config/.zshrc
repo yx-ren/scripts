@@ -103,6 +103,11 @@ plugins=(
     autojump
     colored-man-pages
     bazel
+    extract
+    cp
+    git-open
+    #vi-mode
+    rand-quote
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -143,7 +148,14 @@ alias tmux='tmux -2'
 alias ag='ag --noaffinity'
 
 HOME_DIR=$(echo ~)
+# for yx-ren scripts
 export PATH="$PATH:$HOME_DIR/work/github/yx-ren/scripts"
+
+# for local bin
+export PATH="$PATH:$HOME_DIR/.local/bin"
+
+# enable zoxide
+eval "$(zoxide init zsh)"
 
 ulimit -c unlimited
 
@@ -261,7 +273,24 @@ PROMPT='%{$fg[white]%}%n%{$reset_color%} at %{$fg[green]%}%m %{$reset_color%} in
 #bindkey "^[d" forward-kill-sub-word
 #bindkey "^[^d" forward-kill-full-word
 
+# Ctrl-u - delete a full line
 bindkey \^U backward-kill-line
+my-backward-delete-word() {
+    local WORDCHARS=${WORDCHARS/\//}
+    zle backward-delete-word
+}
+zle -N my-backward-delete-word
+bindkey '^W' my-backward-delete-word
+
+# Ctrl-w - delete a full WORD (including colon, dot, comma, quotes...)
+my-backward-kill-word () {
+    # Add colon, comma, single/double quotes to word chars
+    local WORDCHARS='*?_-.[]~=/&;!#$%^(){}<>:,"'"'"
+    zle -f kill # Append to the kill ring on subsequent kills.
+    zle backward-kill-word
+}
+zle -N my-backward-kill-word
+bindkey '^w' my-backward-kill-word
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
